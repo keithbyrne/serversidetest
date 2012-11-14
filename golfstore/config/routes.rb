@@ -1,5 +1,26 @@
 Golfstore::Application.routes.draw do
+  get "site/about"
+
+  get "site/contact"
+
+  get "site/home"
+  
+  get "cart/index"
+
   resources :items
+  
+  	match '/about' => 'site#about'
+	match '/contact' => 'site#contact'
+	match '/home' => 'site#home'
+	
+	match '/cart' => 'cart#index' 
+	match '/cart/:id' => 'cart#add'
+	match '/cart/remove/:id' => 'cart#remove'
+	match '/clearCart' => 'cart#clearCart'
+	
+	
+  
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
