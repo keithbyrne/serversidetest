@@ -1,26 +1,50 @@
 Golfstore::Application.routes.draw do
+  get "orderitems/index"
+
+  get "orderitems/show"
+
+  get "orderitems/new"
+
+  get "orderitems/edit"
+
+  	devise_for :users do
+	resources :orders
+end
+	resources :orders do
+	resources :orderitems
+end
+  	
+
+  devise_for :users
+
+  get "cart/index"
+
   get "site/about"
 
   get "site/contact"
 
   get "site/home"
-  
-  get "cart/index"
 
   resources :items
   
-  	match '/about' => 'site#about'
-	match '/contact' => 'site#contact'
-	match '/home' => 'site#home'
-	
-	match '/cart' => 'cart#index' 
+  	match '/cart' => 'cart#index'
 	match '/cart/:id' => 'cart#add'
+	
+	match '/about' => 'site#about'
+	match '/contact' => 'site#contact'
+
+	
 	match '/cart/remove/:id' => 'cart#remove'
 	match '/clearCart' => 'cart#clearCart'
 	
+	match '/checkout' => 'cart#createOrder'
+
 	
-  
-  
+	match '/home' => 'site#home'
+	
+	root :to => 'site#home'
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

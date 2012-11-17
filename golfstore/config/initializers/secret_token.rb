@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Golfstore::Application.config.secret_token = '7bfb04a7e74cedaa76171bbd7110735d1a74cf5929e1d05ff0ddcbc8364a58ff583e3b0841d9251c2ff583a8767eec256c628a49f4853268233ae36f0984b1ae'
+Golfstore::Application.config.secret_token = '78a356e2b73fa652d90bc58d83a549dd9f6fadafdb83fc5c96c22f5f8003ed2d64374b07be97a62eca61d9878add108a0388d790ef9b774bd6c031b14a666d99'
